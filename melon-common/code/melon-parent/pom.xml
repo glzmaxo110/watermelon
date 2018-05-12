@@ -7,6 +7,63 @@
     <groupId>com.xx.watermelon</groupId>
     <artifactId>melon-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
+    <!--项目分发配置-->
+    <distributionManagement>
+        <!--部署项目产生的构件到远程仓库需要的信息 -->
+        <repository>
+            <id>maven-releases</id>
+            <name>maven-releases</name>
+            <url>http://nexus.7atour.com/repository/maven-releases</url>
+        </repository>
+        <!--构件的快照部署到哪里,如果没有配置该元素，默认部署到repository元素配置的仓库 -->
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://nexus.7atour.com/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <modules>
+        <module>../melon-common</module>
+        <module>../melon-facade</module>
+        <module>../../../melon-log/code/</module>
+        <module>../../../melon-user/code/</module>
+        <module>../../../melon-oss/code/</module>
+        <!---->
+    </modules>
+
+    <properties>
+        <!--各子项目版本号-->
+        <common_pro_version>0.0.1-SNAPSHOT</common_pro_version>
+        <facade_pro_version>0.0.1-SNAPSHOT</facade_pro_version>
+        <log_pro_version>0.0.1-SNAPSHOT</log_pro_version>
+        <user_pro_version>0.0.1-SNAPSHOT</user_pro_version>
+        <oss_pro_version>0.0.1-SNAPSHOT</oss_pro_version>
+
+        <!--其他可配置属性-->
+
+    </properties>
+
+
+
+    <!--Spring Boot-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.2.RELEASE</version>
+    </parent>
+
+    <!--应用公共的依赖-->
+    <dependencies>
+        <!--Spring Boot-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+    </dependencies>
 
 </project>

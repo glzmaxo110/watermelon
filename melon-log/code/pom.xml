@@ -4,9 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.xx.watermelon</groupId>
+        <artifactId>melon-parent</artifactId>
+        <relativePath>../../melon-common/code/melon-parent/pom.xml</relativePath>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.xx.watermelon</groupId>
     <artifactId>melon-log</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${log_pro_version}</version>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--子项目配置信息-->
+    <profiles>
+
+
+    </profiles>
 
 </project>
