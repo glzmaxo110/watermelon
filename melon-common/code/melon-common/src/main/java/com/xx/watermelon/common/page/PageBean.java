@@ -1,0 +1,236 @@
+package com.xx.watermelon.common.page;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+public class PageBean implements Serializable {
+
+	private static final long serialVersionUID = 8470697978259453214L;
+	/**
+	 * 当前页
+	 */
+	private int currentPage;
+	/**
+	 * 每页显示多少条
+	 */
+	private int numPerPage;
+	/**
+	 * 总记录数
+	 */
+	private int totalCount;
+	/**
+	 * 总页数
+	 */
+	private int pageCount;
+	/**
+	 * 页码列表的开始索引（包含）
+	 */
+	private int beginPageIndex;
+	/**
+	 * 页码列表的结束索引（包含）
+	 */
+	private int endPageIndex;
+	/**
+	 * 本页的数据列表
+	 */
+	private List<Object> recordList;
+	
+	/**
+	 * 当前分页条件下的统计结果
+	 */
+	private Map<String, Object> countResultMap;
+
+	public PageBean() {
+	}
+
+	/**
+	 * 只接受前4个必要的属性，会自动的计算出其他3个属生的值
+	 * @param currentPage
+	 * @param numPerPage
+	 * @param totalCount
+	 * @param recordList
+	 */
+	public PageBean(int currentPage, int numPerPage, int totalCount, List<Object> recordList) {
+		this.currentPage = currentPage;
+		this.numPerPage = numPerPage;
+		this.totalCount = totalCount;
+		this.recordList = recordList;
+
+		// 计算总页码
+		pageCount = (totalCount + numPerPage - 1) / numPerPage;
+		if (pageCount <= 0)
+			pageCount = 1;
+		// 计算 beginPageIndex 和 endPageIndex
+		// >> 总页数不多于10页，则全部显示
+		if (pageCount <= 10) {
+			beginPageIndex = 1;
+			endPageIndex = pageCount;
+		}
+		// >> 总页数多于10页，则显示当前页附近的共10个页码
+		else {
+			// 当前页附近的共10个页码（前4个 + 当前页 + 后5个）
+			beginPageIndex = currentPage - 4;
+			endPageIndex = currentPage + 5;
+			// 当前面的页码不足4个时，则显示前10个页码
+			if (beginPageIndex < 1) {
+				beginPageIndex = 1;
+				endPageIndex = 10;
+			}
+			// 当后面的页码不足5个时，则显示后10个页码
+			if (endPageIndex > pageCount) {
+				endPageIndex = pageCount;
+				beginPageIndex = pageCount - 10 + 1;
+			}
+		}
+	}
+
+	/**
+	 * 只接受前5个必要的属性，会自动的计算出其他3个属生的值
+	 * @param currentPage
+	 * @param pageSize
+	 * @param totalCount
+	 * @param recordList
+	 */
+	public PageBean(int currentPage, int numPerPage, int totalCount,
+			List<Object> recordList, Map<String, Object> countResultMap) {
+		this.currentPage = currentPage;
+		this.numPerPage = numPerPage;
+		this.totalCount = totalCount;
+		this.recordList = recordList;
+		this.countResultMap = countResultMap;
+
+		// 计算总页码
+		pageCount = (totalCount + numPerPage - 1) / numPerPage;
+		if (pageCount <= 0)
+			pageCount = 1;
+		
+		// 计算 beginPageIndex 和 endPageIndex >> 总页数不多于10页，则全部显示
+		if (pageCount <= 10) {
+			beginPageIndex = 1;
+			endPageIndex = pageCount;
+		}
+		
+		// >> 总页数多于10页，则显示当前页附近的共10个页码
+		else {
+			// 当前页附近的共10个页码（前4个 + 当前页 + 后5个）
+			beginPageIndex = currentPage - 4;
+			endPageIndex = currentPage + 5;
+			// 当前面的页码不足4个时，则显示前10个页码
+			if (beginPageIndex < 1) {
+				beginPageIndex = 1;
+				endPageIndex = 10;
+			}
+			// 当后面的页码不足5个时，则显示后10个页码
+			if (endPageIndex > pageCount) {
+				endPageIndex = pageCount;
+				beginPageIndex = pageCount - 10 + 1;
+			}
+		}
+	}
+
+	/**
+	 * 当前页面记录数
+	 */
+	public List<Object> getRecordList() {
+		return recordList;
+	}
+	/**
+	 * 当前页面记录数
+	 */
+	public void setRecordList(List<Object> recordList) {
+		this.recordList = recordList;
+	}
+
+	/**
+	 * 当前页
+	 */
+	public int getCurrentPage() {
+		return currentPage;
+	}
+	/**
+	 * 当前页
+	 */
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	/**
+	 * 总页数
+	 */
+	public int getPageCount() {
+		return pageCount;
+	}
+	/**
+	 * 总页数
+	 */
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	/**
+	 * 每页条数
+	 */
+	public int getNumPerPage() {
+		return numPerPage;
+	}
+	/**
+	 * 每页条数
+	 */
+	public void setNumPerPage(int numPerPage) {
+		this.numPerPage = numPerPage;
+	}
+
+	/**
+	 * 总记录数
+	 */
+	public int getTotalCount() {
+		return totalCount;
+	}
+	/**
+	 * 总记录数
+	 */
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	/**
+	 * 页码列表的开始索引（包含）
+	 */
+	public int getBeginPageIndex() {
+		return beginPageIndex;
+	}
+	/**
+	 * 页码列表的开始索引（包含）
+	 */
+	public void setBeginPageIndex(int beginPageIndex) {
+		this.beginPageIndex = beginPageIndex;
+	}
+
+	/**
+	 * 页码列表的结束索引（包含）
+	 */
+	public int getEndPageIndex() {
+		return endPageIndex;
+	}
+	/**
+	 * 页码列表的结束索引（包含）
+	 */
+	public void setEndPageIndex(int endPageIndex) {
+		this.endPageIndex = endPageIndex;
+	}
+
+	/**
+	 * 当前分页条件下的统计结果
+	 */
+	public Map<String, Object> getCountResultMap() {
+		return countResultMap;
+	}
+	/**
+	 * 当前分页条件下的统计结果
+	 */
+	public void setCountResultMap(Map<String, Object> countResultMap) {
+		this.countResultMap = countResultMap;
+	}
+
+}

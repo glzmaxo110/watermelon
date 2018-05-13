@@ -74,6 +74,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <!--让在src下的资源也能加载到classes目录-->
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>
 

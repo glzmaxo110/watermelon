@@ -18,12 +18,16 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
     </properties>
 
     <!--此项目独有依赖-->
     <dependencies>
 
 
+
     </dependencies>
+
+
 
 </project>
