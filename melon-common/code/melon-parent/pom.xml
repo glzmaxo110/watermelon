@@ -41,7 +41,10 @@
         <user_pro_version>0.0.1-SNAPSHOT</user_pro_version>
         <oss_pro_version>0.0.1-SNAPSHOT</oss_pro_version>
 
-        <!--其他可配置属性-->
+        <!--其他包属性-->
+
+
+
 
     </properties>
 
@@ -57,11 +60,11 @@
     <!--应用公共的依赖-->
     <dependencies>
         <!--====Spring Cloud=====-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
             <version>1.4.4.RELEASE</version>
-        </dependency>
+        </dependency>-->
         <!--====Spring Boot=====-->
         <!--web工具包-->
         <dependency>
@@ -106,7 +109,7 @@
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
         <!--公共依赖-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.47</version>
@@ -176,7 +179,7 @@
             <artifactId>commons-lang</artifactId>
             <version>2.5</version>
         </dependency>
-        <!--java邮件发送-->
+        &lt;!&ndash;java邮件发送&ndash;&gt;
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
@@ -191,8 +194,7 @@
             <groupId>net.sourceforge.jexcelapi</groupId>
             <artifactId>jxl</artifactId>
             <version>2.6.12</version>
-        </dependency>
-
+        </dependency>-->
 
 
     </dependencies>
