@@ -29,7 +29,7 @@ public class CrmMemberController {
     @ResponseBody
     public CrmMemberMapper getMember(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
         Long id = WebParamUtils.getLongValue(params.get("id"));
-        CrmMemberMapper crmMember = crmMemberService.getCrmMemberById(1L);
+        CrmMemberMapper crmMember = crmMemberService.getCrmMemberById(id);
         return crmMember;
     }
 
