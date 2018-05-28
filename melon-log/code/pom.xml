@@ -27,6 +27,23 @@
 
     </profiles>
 
+    <dependencies>
+        <!-- 引入公共工程 -->
+        <dependency>
+            <groupId>com.xx.watermelon</groupId>
+            <artifactId>melon-common</artifactId>
+            <version>${common_pro_version}</version>
+        </dependency>
+
+        <!--热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>  <!-- 表示依赖不会传递 -->
+        </dependency>
+    </dependencies>
+
+
     <build>
         <plugins>
             <plugin>

@@ -34,6 +34,22 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.xx.watermelon</groupId>
+      <artifactId>melon-common</artifactId>
+      <version>${common_pro_version}</version>
+    </dependency>
+
+
+    <!--热部署-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>  <!-- 表示依赖不会传递 -->
+    </dependency>
+
+
   </dependencies>
 
   <build>
@@ -59,10 +75,6 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.20.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

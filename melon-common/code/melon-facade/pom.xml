@@ -23,6 +23,12 @@
 
     <!--此项目独有依赖-->
     <dependencies>
+        <!-- 引入公共工程 -->
+        <dependency>
+            <groupId>com.xx.watermelon</groupId>
+            <artifactId>melon-common</artifactId>
+            <version>${common_pro_version}</version>
+        </dependency>
 
 
     </dependencies>
