@@ -21,6 +21,13 @@ spring:
     url: jdbc:mysql://112.74.189.171:3306/melon_db_dev
     username: root
     password: root
+  redis:
+    host: 112.74.189.171
+    port: 6379
+    password: 123456
+    #连接超时时间（毫秒）
+    timeout: 10000
+
 
 #测试环境配置
 ---
@@ -31,6 +38,13 @@ spring:
     url: jdbc:mysql://112.74.189.171:3306/melon_db_dev
     username: root
     password: root
+  redis:
+      host: 112.74.189.171
+      port: 6379
+      password: 123456
+      #连接超时时间（毫秒）
+      timeout: 10000
+
 
 #生产环境配置
 ---
@@ -41,7 +55,12 @@ spring:
     url: jdbc:mysql://112.74.189.171:3306/melon_db_dev
     username: root
     password: root
-
+  redis:
+      host: 112.74.189.171
+      port: 6379
+      password: 123456
+      #连接超时时间（毫秒）
+      timeout: 10000
 
 
 

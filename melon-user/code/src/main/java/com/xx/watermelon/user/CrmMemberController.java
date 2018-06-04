@@ -1,6 +1,7 @@
 package com.xx.watermelon.user;
 
 import com.xx.watermelon.common.utils.web.WebParamUtils;
+import com.xx.watermelon.user.cache.IUserCacheService;
 import com.xx.watermelon.user.exception.UserException;
 import com.xx.watermelon.user.mapper.CrmMemberMapper;
 import com.xx.watermelon.user.service.ICrmMemberService;
@@ -24,6 +25,8 @@ public class CrmMemberController {
 
     @Autowired
     private ICrmMemberService crmMemberService;
+    @Autowired
+    private IUserCacheService userCacheService;
 
     @RequestMapping("/getMember")
     @ResponseBody
@@ -31,6 +34,25 @@ public class CrmMemberController {
         Long id = WebParamUtils.getLongValue(params.get("id"));
         CrmMemberMapper crmMember = crmMemberService.getCrmMemberById(id);
         return crmMember;
+    }
+
+    @RequestMapping("/setRedisCache")
+    @ResponseBody
+    public String setRedisCache(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
+
+        String key = WebParamUtils.getStringValue(params.get("key"));
+        String value = WebParamUtils.getStringValue(params.get("value"));
+        userCacheService.setStringValue(key,value);
+        return "设置缓存成功";
+    }
+
+    @RequestMapping("/getRedisCache")
+    @ResponseBody
+    public String getRedisCachegetRedisCache(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
+
+        String key = WebParamUtils.getStringValue(params.get("key"));
+        String stringValue = userCacheService.getStringValue(key);
+        return stringValue;
     }
 
 
