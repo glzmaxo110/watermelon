@@ -1,0 +1,47 @@
+#使用配置
+spring:
+  profiles:
+    active: dev
+server:
+  #注册中心端口号：
+  port: 8761
+
+#开发环境配置
+---
+spring:
+  profiles: dev
+  #应用区分标识
+  application: eureka-server
+eureka:
+  server:
+    #自我保护：出现网络分区,eureka在短时间内丢失过多客户端时，会进入自我保护模式，即一个服务长时间没有发送心跳，eureka也不会将其删除。
+    enable-self-preservation: false   #关闭自我保护
+    #eviction-interval-timer-in-ms: 4000   #清理间隔(单位毫秒）
+  instance:
+    #服务注册中心实例的主机名
+    hostname: localhost
+  client:
+    #是否向服务注册中心注册自己
+    register-with-eureka: false
+    #是否检索服务
+    fetchRegistry: false
+    #服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      defaultZone : http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#测试环境配置
+---
+spring:
+  profiles: test
+
+
+
+#生产环境配置
+---
+spring:
+  profiles: prod
+
+
+
+
+

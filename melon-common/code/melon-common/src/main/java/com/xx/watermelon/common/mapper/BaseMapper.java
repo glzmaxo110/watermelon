@@ -1,7 +1,12 @@
 package com.xx.watermelon.common.mapper;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 
+@Getter
+@Setter
 public class BaseMapper implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -6313873934736738042L;

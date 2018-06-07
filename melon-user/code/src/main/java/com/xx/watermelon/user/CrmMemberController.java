@@ -48,7 +48,7 @@ public class CrmMemberController {
 
     @RequestMapping("/getRedisCache")
     @ResponseBody
-    public String getRedisCachegetRedisCache(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
+    public String getRedisCache(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
 
         String key = WebParamUtils.getStringValue(params.get("key"));
         String stringValue = userCacheService.getStringValue(key);

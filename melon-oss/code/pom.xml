@@ -28,26 +28,26 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-
+    <!-- 引入实体工程 -->
     <dependency>
       <groupId>com.xx.watermelon</groupId>
-      <artifactId>melon-common</artifactId>
-      <version>${common_pro_version}</version>
+      <artifactId>melon-facade</artifactId>
+      <version>${facade_pro_version}</version>
     </dependency>
-
 
     <!--热部署-->
-    <dependency>
+    <!--<dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional>  <!-- 表示依赖不会传递 -->
+      <optional>true</optional>  &lt;!&ndash; 表示依赖不会传递 &ndash;&gt;
+    </dependency>-->
+
+    <!--spring-cloud-client-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
+
 
 
   </dependencies>
@@ -59,42 +59,13 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.20.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
+          <configuration>
+            <fork>true</fork>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
-    <!--让在src下的资源也能加载到classes目录-->
-    <resources>
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.xml</include>
-        </includes>
-      </resource>
-    </resources>
+
   </build>
 </project>
 

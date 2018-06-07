@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +25,8 @@ public class CrmMemberService implements ICrmMemberService{
 
     @Autowired
     private ICrmMemberDao crmMemberDao;
+    @Autowired
+    private DataSource dataSource;
 
     @Override
     public void saveCrmMember(CrmMemberMapper crmMemberMapper, UserSession session) throws BaseCoreException {
@@ -41,6 +44,7 @@ public class CrmMemberService implements ICrmMemberService{
     @Override
     @Transactional(readOnly = true)
     public CrmMemberMapper getCrmMemberById(Long id) throws UserException {
+        System.out.println(dataSource.getClass());
         return crmMemberDao.getById(id);
     }
 }

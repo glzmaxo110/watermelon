@@ -2,6 +2,9 @@
 spring:
   profiles:
     active: dev
+server:
+  #client端口，注册中心端口为7752
+  port: 8080
 #公共配置与profiles选择无关 mapperLocations指的路径是src/main/resources
 mybatis:
   # 配置文件位置
@@ -10,12 +13,21 @@ mybatis:
   mapper-locations: classpath*:mybatis/mapper/*Mapper.xml
   # 扫描pojo类的位置,在此处指明扫描实体类的包，在mapper中就可以不用写pojo类的全路径名了
   #type-aliases-package: com.xx.watermelon.user.mapper
-
+eureka:
+  #注册中心地址
+  port: 8761
+  instance:
+    hostname: localhost
+    appname: ${spring.application}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
 
 #开发环境配置
 ---
 spring:
   profiles: dev
+  application: melon-user-client
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://112.74.189.171:3306/melon_db_dev

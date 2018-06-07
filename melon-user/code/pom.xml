@@ -24,12 +24,6 @@
     </properties>
 
     <dependencies>
-        <!-- 引入公共工程 -->
-        <dependency>
-            <groupId>com.xx.watermelon</groupId>
-            <artifactId>melon-common</artifactId>
-            <version>${common_pro_version}</version>
-        </dependency>
         <!-- 引入实体工程 -->
         <dependency>
             <groupId>com.xx.watermelon</groupId>
@@ -37,11 +31,40 @@
             <version>${facade_pro_version}</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> <!-- 表示依赖不会传递 -->
+            <optional>true</optional> &lt;!&ndash; 表示依赖不会传递 &ndash;&gt;
+        </dependency>-->
+
+        <!--spring-cloud-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
+        <!--数据库连接-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--JDBC-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <!--MyBatis-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <!--Redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
 
     </dependencies>
 
