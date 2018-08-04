@@ -1,4 +1,4 @@
-package com.xx.watermelon.user;
+package com.xx.watermelon.user.controller;
 
 import com.xx.watermelon.common.utils.web.WebParamUtils;
 import com.xx.watermelon.user.cache.IUserCacheService;

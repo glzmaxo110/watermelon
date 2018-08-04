@@ -1,8 +1,10 @@
-package com.xx.watermelon.oss.user;
+package com.xx.watermelon.oss.user.controller;
 
 import com.xx.watermelon.common.utils.web.WebParamUtils;
+import com.xx.watermelon.oss.user.service.CrmMemberOssService;
 import com.xx.watermelon.user.exception.UserException;
 import com.xx.watermelon.user.mapper.CrmMemberMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,10 +22,8 @@ import java.util.Map;
 @RequestMapping("/crmMember")
 public class CrmMemberController {
 
-    /*@Autowired
-    private ICrmMemberService crmMemberService;
     @Autowired
-    private IUserCacheService userCacheService;*/
+    private CrmMemberOssService crmMemberOssService;
 
     @RequestMapping("/getMember")
     @ResponseBody
