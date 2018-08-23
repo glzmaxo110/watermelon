@@ -47,8 +47,6 @@
 
         <!--其他包属性-->
 
-
-
     </properties>
 
     <!--Spring Boot-->
@@ -134,7 +132,26 @@
 
     <!--所有应用公共的依赖-->
     <dependencies>
+        <!--Spring Boot web工具包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--避免日志冲突-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
+
+        <!--JUnit springBoot自带-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 
 

@@ -24,11 +24,7 @@
     <!--此项目依赖-->
     <dependencies>
 
-        <!--Spring Boot web工具包-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
         <!--lombok,来自springBoot:spring-boot-dependencies-2.0.2.RELEASE-->
         <dependency>
             <groupId>org.projectlombok</groupId>
