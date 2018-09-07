@@ -30,8 +30,8 @@
         <module>../melon-facade</module>
         <module>../../../melon-log/code/</module>
         <module>../../../melon-user/code/</module>
-        <module>../../../melon-oss/code/</module>
         <module>../../../melon-bigdata/code/</module>
+        <module>../../../melon-oss/code/</module>
         <module>../../../eureka-server/code/</module>
     </modules>
 
