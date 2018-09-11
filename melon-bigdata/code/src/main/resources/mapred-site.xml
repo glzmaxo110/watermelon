@@ -19,10 +19,11 @@
 <configuration>
 
 	<!-- 指定mr运行在yarn上 -->
-	<property>
+	<!--应该是在本地运行-->
+	<!--<property>
 		<name>mapreduce.framework.name</name>
 		<value>yarn</value>
-	</property>
+	</property>-->
 
 	<!--需配置以下两个属性才可本次测试MapReduce-->
 	<property>

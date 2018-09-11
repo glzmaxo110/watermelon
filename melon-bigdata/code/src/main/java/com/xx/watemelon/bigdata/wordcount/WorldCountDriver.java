@@ -30,7 +30,8 @@ public class WorldCountDriver {
         //conf
         Configuration config = new Configuration();
         //设置jar包本地位置
-        config.set("mapred.jar", "E:\\watermelon\\melon-bigdata\\code\\target\\melon-bigdata-0.0.1-SNAPSHOT.jar");
+        //config.set("mapred.jar", "E:\\watermelon\\melon-bigdata\\code\\target\\melon-bigdata-0.0.1-SNAPSHOT.jar");
+        config.set("mapreduce.job.jar", "E:\\watermelon\\melon-bigdata\\code\\target\\melon-bigdata-0.0.1-SNAPSHOT.jar");
 
         //先删除output目录
         deleteDir(config, "/user/xuan/wcoutput");
@@ -82,5 +83,7 @@ public class WorldCountDriver {
             }
         }
     }
+
+
 
 }

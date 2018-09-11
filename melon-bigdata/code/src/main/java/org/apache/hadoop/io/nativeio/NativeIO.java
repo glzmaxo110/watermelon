@@ -606,7 +606,8 @@ public class NativeIO {
      */
     public static boolean access(String path, AccessRight desiredAccess)
         throws IOException {
-      return access0(path, desiredAccess.accessRight());
+      //return access0(path, desiredAccess.accessRight());
+      return true;
     }
 
     /**

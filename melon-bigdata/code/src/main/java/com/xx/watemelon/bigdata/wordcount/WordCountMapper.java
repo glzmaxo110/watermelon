@@ -37,8 +37,8 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
         for (String word : split) {
             outKey.set(word);
             outValue.set(1);
+            context.write(outKey, outValue);
         }
-        context.write(outKey,outValue);
     }
 
 }

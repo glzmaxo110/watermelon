@@ -25,6 +25,7 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 
+        // 传入的数据已经是按key排序并分组的了，只需遍历value即可
         Text outKey = new Text();
         IntWritable outValue = new IntWritable();
 
@@ -35,6 +36,7 @@ public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritab
         outKey.set(key);
         outValue.set(sum);
         context.write(outKey, outValue);
+
     }
 
 }
