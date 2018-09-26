@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.xx.watermelon</groupId>
         <artifactId>melon-parent</artifactId>
-        <relativePath>../melon-parent</relativePath>
+        <relativePath>../melon-parent/pom.xml</relativePath>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 

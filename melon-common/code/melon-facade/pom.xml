@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.xx.watermelon</groupId>
         <artifactId>melon-parent</artifactId>
-        <relativePath>../melon-parent</relativePath>
+        <relativePath>../melon-parent/pom.xml</relativePath>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -15,6 +15,7 @@
     <artifactId>melon-facade</artifactId>
     <version>${facade_pro_version}</version>
     <packaging>jar</packaging>
+    <name>tp-facade</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

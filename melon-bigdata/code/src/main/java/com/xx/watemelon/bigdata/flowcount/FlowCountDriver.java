@@ -53,6 +53,12 @@ public class FlowCountDriver {
         FileInputFormat.setInputPaths(job, new Path("/user/xuan/fcinput"));
         FileOutputFormat.setOutputPath(job, new Path("/user/xuan/fcoutput"));
 
+        //设置了自定义分区之后，一定要设置分区数，否则报错
+        job.setPartitionerClass(ProvincePartitioner.class);
+        // 如果小于实际分区数，则java.io.IOException：Illegal partition for
+        // 如果多于实际分区数，则多出来的输出文件为空
+        job.setNumReduceTasks(8);
+
         boolean result = job.waitForCompletion(true);
         System.out.println(result);
         // status是非零参数，那么表示是非正常退出。
