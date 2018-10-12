@@ -31,6 +31,7 @@
         <module>../../../melon-log/code/</module>
         <module>../../../melon-user/code/</module>
         <module>../../../melon-bigdata/code/</module>
+        <module>../../../melon-study/code/</module>
         <module>../../../melon-oss/code/</module>
         <module>../../../eureka-server/code/</module>
     </modules>
@@ -43,6 +44,7 @@
         <user_pro_version>0.0.1-SNAPSHOT</user_pro_version>
         <oss_pro_version>0.0.1-SNAPSHOT</oss_pro_version>
         <bigdata_pro_version>0.0.1-SNAPSHOT</bigdata_pro_version>
+        <study_pro_version>0.0.1-SNAPSHOT</study_pro_version>
         <eurekaServer_pro_version>0.0.1-SNAPSHOT</eurekaServer_pro_version>
 
         <!--其他包属性-->
