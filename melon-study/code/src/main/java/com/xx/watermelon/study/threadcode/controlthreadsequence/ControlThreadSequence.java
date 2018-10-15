@@ -51,12 +51,18 @@ public class ControlThreadSequence {
     * */
 
     public static void main(String[] args) throws InterruptedException {
-        @SuppressWarnings("AlibabaThreadPoolCreation") ExecutorService executorService = Executors.newFixedThreadPool(1);
-        executorService.submit(thread1);
-        executorService.submit(thread2);
-        executorService.submit(thread3);
+        @SuppressWarnings("AlibabaThreadPoolCreation") ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("**********" + Thread.currentThread().getName() + "***********");
+                    Thread.currentThread().interrupt();
+                    System.out.println("线程" + Thread.currentThread().getName() + "是否interrupted" + Thread.currentThread().isInterrupted());
+                }
+            });
+        }
         executorService.shutdown();
     }
-
 
 }
