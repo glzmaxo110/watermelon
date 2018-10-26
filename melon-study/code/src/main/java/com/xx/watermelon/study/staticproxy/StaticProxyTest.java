@@ -4,7 +4,7 @@ package com.xx.watermelon.study.staticproxy;
  * @description: 静态代理测试类
  * @author: xiesx
  * @createTime: 2018-10-25 18:25
- * @version: 1.0
+ * @version: 1.0.0
  * @Copyright: xiesx
  * @modify: xiesx
  **/
