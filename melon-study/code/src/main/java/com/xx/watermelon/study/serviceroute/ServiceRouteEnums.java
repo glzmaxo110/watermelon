@@ -7,17 +7,22 @@ import org.apache.commons.lang.StringUtils;
  * @version 1.0,2018-11-05 下午6:21:37,xiesx,Ins
  * @remark
  */
-public enum IndexRoute {
+public enum ServiceRouteEnums {
 	/**
 	 * 1、路由服务1
 	 */
-	IndexService1(1, "路由服务1"),
+	ServiceRoute1(1, "路由服务1"),
+
+	/**
+	 * 2、路由服务2
+	 */
+	ServiceRoute2(2, "路由服务2"),
 	;
 
 	private String name;
 	private int index;
 
-	private IndexRoute(int index, String name) {
+	private ServiceRouteEnums(int index, String name) {
 		this.index = index;
 		this.name = name;
 	}
@@ -25,12 +30,14 @@ public enum IndexRoute {
 	/**
 	 * 通过下标获得枚举
 	 */
-	public static IndexRoute getByIndex(Integer index) {
-		if (null == index)
+	public static ServiceRouteEnums getByIndex(Integer index) {
+		if (null == index) {
 			return null;
-		for (IndexRoute at : IndexRoute.values()) {
-			if (at.index == index)
+		}
+		for (ServiceRouteEnums at : ServiceRouteEnums.values()) {
+			if (at.index == index) {
 				return at;
+			}
 		}
 		return null;
 	}
@@ -38,12 +45,14 @@ public enum IndexRoute {
 	/**
 	 * 通过名称获得枚举
 	 */
-	public static IndexRoute getByName(String name) {
-		if (StringUtils.isBlank(name))
+	public static ServiceRouteEnums getByName(String name) {
+		if (StringUtils.isBlank(name)) {
 			return null;
-		for (IndexRoute at : IndexRoute.values()) {
-			if (at.name.equals(name))
+		}
+		for (ServiceRouteEnums at : ServiceRouteEnums.values()) {
+			if (at.name.equals(name)) {
 				return at;
+			}
 		}
 		return null;
 	}

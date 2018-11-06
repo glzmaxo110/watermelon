@@ -1,9 +1,4 @@
-package com.xx.watermelon.study.serviceroute;/**
- * @author xiesx
- * @version 1.0
- * @description AliyunMsgServiceImpl
- * @copyright 2018-11-05 18:17
- */
+package com.xx.watermelon.study.serviceroute;
 
 /**
  * @description: 阿里云短信接口实现
@@ -13,5 +8,16 @@ package com.xx.watermelon.study.serviceroute;/**
  * @Copyright: xiesx
  * @modify: xiesx
  **/
-public class AliyunMsgServiceImpl {
+public class AliyunMsgServiceImpl extends AbstractBaseMsgService {
+
+    @Override
+    public String sendMessage(String phoneNumber, String content) {
+        return null;
+    }
+
+    @Override
+    public String acceptReceipt(String msgId) {
+        return null;
+    }
+
 }

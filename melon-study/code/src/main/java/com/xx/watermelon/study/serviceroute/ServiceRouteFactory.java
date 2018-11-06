@@ -13,33 +13,34 @@ import java.util.Objects;
  * @author user
  * @description 利用Spring的BeanFactory获取不同分类产品业务接口实现实例
  * @copyright
- * @version 1.0,2018年11月05日 上午11:59:02,Ins
+ * @version 1.0,2018年11月05日 上午11:59:02
  */
 @Configuration
-public class ProductRouteFactory implements BeanFactoryAware {
+public class ServiceRouteFactory implements BeanFactoryAware {
 
 	private static BeanFactory beanFactory;
 	/**
-	 * beanMap存储格式说明：key=IndexRoute.key, value=IndexRoute.value
+	 * beanMap存储格式说明：key=ServiceRouteEnums.key, value=ServiceRouteEnums.value
 	 */
 	private static Map<Integer, String> beanMap = null;
 	
 	static {
 		beanMap = new HashMap<Integer, String>(64);
 		// 添加需要路由的service
-		beanMap.put(IndexRoute.IndexService1.getIndex(), "indexService1");
+		beanMap.put(ServiceRouteEnums.ServiceRoute1.getIndex(), "indexService1");
+		beanMap.put(ServiceRouteEnums.ServiceRoute2.getIndex(), "indexService2");
 	}
 
 	@Override
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		ProductRouteFactory.beanFactory = beanFactory;
+		ServiceRouteFactory.beanFactory = beanFactory;
 	}
 
 	/**
 	 * 按供应类目索引ID路由，获取不同分类产品业务接口实现实例
 	 * @param indexId	索引ID
 	 * @return
-	 * @version 1.0,2018年8月29日 下午2:48:59,Liugl,Ins
+	 * @version 1.0,2018年11月05日 下午2:48:59
 	 */
 	public static Object getBean(Integer indexId) {
 		Objects.requireNonNull(indexId, "The parameter [indexId] is empty.");
