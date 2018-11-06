@@ -34,15 +34,18 @@ public class ServiceRouteController {
         Integer wangYiIndexId = 2;
 
         IMessageService aliyunMsgService = (IMessageService) ServiceRouteFactory.getBean(aliyunIndexId);
+        // 调用抽象类的方法
+        aliyunMsgService.checkParams(null);
         aliyunMsgService.sendMessage("", "");
         aliyunMsgService.acceptReceipt("");
 
         IMessageService wangYiMsgService = (IMessageService) ServiceRouteFactory.getBean(wangYiIndexId);
+        // 调用抽象类的方法
+        aliyunMsgService.checkParams(null);
         wangYiMsgService.sendMessage("", "");
         wangYiMsgService.acceptReceipt("");
 
         return aliyunMsgService.toString() + wangYiMsgService.toString();
-
     }
 
 }
