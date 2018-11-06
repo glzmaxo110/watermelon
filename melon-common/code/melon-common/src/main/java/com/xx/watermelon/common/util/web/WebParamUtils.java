@@ -1,4 +1,4 @@
-package com.xx.watermelon.common.utils.web;
+package com.xx.watermelon.common.util.web;
 
 import org.apache.commons.lang.StringUtils;
 

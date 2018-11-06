@@ -1,7 +1,7 @@
 package com.xx.watermelon.common.exception;
 
 
-import com.xx.watermelon.common.utils.properties.ConfigReader;
+import com.xx.watermelon.common.util.properties.ConfigReader;
 
 /**
  * 基础的异常类（所有异常继承这个）

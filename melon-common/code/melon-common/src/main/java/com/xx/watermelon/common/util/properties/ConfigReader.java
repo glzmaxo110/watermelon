@@ -1,4 +1,4 @@
-package com.xx.watermelon.common.utils.properties;
+package com.xx.watermelon.common.util.properties;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;

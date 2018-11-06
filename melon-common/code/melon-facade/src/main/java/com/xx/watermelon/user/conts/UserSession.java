@@ -1,7 +1,7 @@
 package com.xx.watermelon.user.conts;
 
 
-import com.xx.watermelon.common.utils.string.StringUtils;
+import com.xx.watermelon.common.util.string.StringUtils;
 import com.xx.watermelon.user.mapper.CrmMemberMapper;
 
 import java.io.Serializable;

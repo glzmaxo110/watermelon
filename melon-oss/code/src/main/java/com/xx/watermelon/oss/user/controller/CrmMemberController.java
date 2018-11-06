@@ -1,6 +1,6 @@
 package com.xx.watermelon.oss.user.controller;
 
-import com.xx.watermelon.common.utils.web.WebParamUtils;
+import com.xx.watermelon.common.util.web.WebParamUtils;
 import com.xx.watermelon.oss.user.service.CrmMemberOssService;
 import com.xx.watermelon.user.exception.UserException;
 import com.xx.watermelon.user.mapper.CrmMemberMapper;
