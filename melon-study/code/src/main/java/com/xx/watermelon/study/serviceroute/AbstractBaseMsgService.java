@@ -13,5 +13,34 @@ package com.xx.watermelon.study.serviceroute;
  **/
 public abstract class AbstractBaseMsgService implements IMessageService {
 
+    /**
+     * 空实现，供继承该抽象类的子类自由选择需要覆写的方法(此为适配,不需要子类覆写的方法)
+     * @param obj 待校验的参数
+     */
+    @Override
+    public void checkParams(Object obj) {
+        System.out.println("抽象类校验公共参数");
+    }
+
+    /**
+     * 空实现，供继承该抽象类的子类自由选择需要覆写的方法
+     * @param phoneNumber 短信接收电话号码
+     * @param content 短信内容
+     * @return
+     */
+    @Override
+    public String sendMessage(String phoneNumber, String content) {
+        return null;
+    }
+
+    /**
+     * 空实现，供继承该抽象类的子类自由选择需要覆写的方法
+     * @param msgId 消息ID
+     * @return
+     */
+    @Override
+    public String acceptReceipt(String msgId) {
+        return null;
+    }
 
 }

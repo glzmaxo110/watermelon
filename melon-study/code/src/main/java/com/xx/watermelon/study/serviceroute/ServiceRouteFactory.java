@@ -27,8 +27,8 @@ public class ServiceRouteFactory implements BeanFactoryAware {
 	static {
 		beanMap = new HashMap<Integer, String>(64);
 		// 添加需要路由的service
-		beanMap.put(ServiceRouteEnums.ServiceRoute1.getIndex(), "indexService1");
-		beanMap.put(ServiceRouteEnums.ServiceRoute2.getIndex(), "indexService2");
+		beanMap.put(ServiceRouteEnums.AliyunMsgService.getIndex(), "aliyunMsgService");
+		beanMap.put(ServiceRouteEnums.WangYiMsgService.getIndex(), "wangYiMsgService");
 	}
 
 	@Override

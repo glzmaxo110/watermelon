@@ -28,6 +28,13 @@ public class CrmMemberController {
     @Autowired
     private IUserCacheService userCacheService;
 
+    /**
+     * 查询会员信息
+     * @param request
+     * @param params
+     * @return
+     * @throws UserException
+     */
     @RequestMapping("/getMember")
     @ResponseBody
     public CrmMemberMapper getMember(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
@@ -36,6 +43,13 @@ public class CrmMemberController {
         return crmMember;
     }
 
+    /**
+     * 设置redis缓存
+     * @param request
+     * @param params
+     * @return
+     * @throws UserException
+     */
     @RequestMapping("/setRedisCache")
     @ResponseBody
     public String setRedisCache(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
@@ -46,6 +60,13 @@ public class CrmMemberController {
         return "设置缓存成功";
     }
 
+    /**
+     * 获取redis缓存
+     * @param request
+     * @param params
+     * @return
+     * @throws UserException
+     */
     @RequestMapping("/getRedisCache")
     @ResponseBody
     public String getRedisCache(HttpServletRequest request, @RequestParam Map<String,Object> params) throws UserException {
@@ -54,6 +75,5 @@ public class CrmMemberController {
         String stringValue = userCacheService.getStringValue(key);
         return stringValue;
     }
-
 
 }

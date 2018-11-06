@@ -11,6 +11,12 @@ package com.xx.watermelon.study.serviceroute;
 public interface IMessageService {
 
     /**
+     * 参数校验
+     * @param obj 待校验的参数
+     */
+    void checkParams(Object obj);
+
+    /**
      * 发送短消息
      * @param phoneNumber 短信接收电话号码
      * @param content 短信内容
