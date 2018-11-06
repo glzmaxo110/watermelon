@@ -10,8 +10,8 @@ import java.util.Map;
 
 /**
  * @author xiesx
- * @version 1.0.0, Created by xiesx on 2018-05-26 18:33.
- * @description ServiceRouteController
+ * @version 1.0.0
+ * @description ServiceRouteController 服务路由测试控制器
  * @copyright 2018-11-06 18:33
  */
 @Controller
