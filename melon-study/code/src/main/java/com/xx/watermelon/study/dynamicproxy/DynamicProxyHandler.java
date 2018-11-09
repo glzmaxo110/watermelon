@@ -28,11 +28,11 @@ public class DynamicProxyHandler implements InvocationHandler {
     }
 
     private void before() {
-        System.out.println("真实方法执行之前");
+        System.out.println("真实方法执行之前的操作");
     }
 
     private void after() {
-        System.out.println("真实方法执行之后");
+        System.out.println("真实方法执行之后的操作");
     }
 
 

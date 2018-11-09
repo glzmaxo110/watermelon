@@ -98,19 +98,4 @@ public class FlowBean implements Writable {
         return upFlow + "\t" + downFlow + "\t" + sumFlow;
     }
 
-    /**
-     * 覆写compareTo方法修改排序规则
-       如果指定的数与参数相等返回0。
-       如果指定的数小于参数返回 -1。
-       如果指定的数大于参数返回 1。
-     * @param o
-     * @return
-     */
-    /*@Override
-    public int compareTo(FlowBean o) {
-        // 倒序排列，从大到小
-        // 大的排前，小的排后
-        return o.getSumFlow() > this.sumFlow ? 1 : -1;
-    }*/
-
 }

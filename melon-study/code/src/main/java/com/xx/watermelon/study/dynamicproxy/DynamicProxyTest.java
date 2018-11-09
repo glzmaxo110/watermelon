@@ -26,6 +26,7 @@ public class DynamicProxyTest {
         int addResult = calculatorProxy.add(2, 2);
 
         System.out.println("=====================");
+
         System.out.println(addResult);
 
     }
