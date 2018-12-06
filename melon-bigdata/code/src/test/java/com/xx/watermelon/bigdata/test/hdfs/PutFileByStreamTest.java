@@ -26,11 +26,11 @@ public class PutFileByStreamTest extends DemoTest {
             Configuration config = new Configuration();
             FileSystem fs = FileSystem.get(new URI("hdfs://192.168.1.102:9000"), config, "xuan");
             //2.输入流
-            File file = new File("e:/PersonalData/bigDataTest/wordcountinput/hello.txt");
+            File file = new File("e:/PersonalData/bigDataTest/groupcomparator/groupcomparator.txt");
 
             InputStream inStream = (InputStream) new FileInputStream(file);
             //3.输出流
-            Path outPutPath = new Path("hdfs://192.168.1.102:9000/user/xuan/helloword/hello.txt");
+            Path outPutPath = new Path("hdfs://192.168.1.102:9000/user/xuan/groupcomparator/groupcomparator.txt");
             OutputStream outputStream = fs.create(outPutPath).getWrappedStream();
             //4.流对接
             IOUtils.copyBytes(inStream, outputStream, config); //此方法包含流关闭的方法
