@@ -16,13 +16,13 @@
     <version>${bigdata_pro_version}</version>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-
         <!-- install时调过Test -->
         <!-- surefire plugin方式跳过maven test， 等同$ mvn package -DskipTests -->
         <skipTests>true</skipTests>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <hadoop.version>2.7.2</hadoop.version>
 
     </properties>
 
@@ -40,13 +40,6 @@
             <version>${common_pro_version}</version>
         </dependency>
 
-        <!--热部署-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>  <!-- 表示依赖不会传递 -->
-        </dependency>
-
         <!--spring-cloud-client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -57,7 +50,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
             <!--排除servlet-api,否则springBoot无法启动-->
             <exclusions>
                 <exclusion>
@@ -69,7 +62,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
             <!--排除servlet-api,否则springBoot无法启动-->
             <exclusions>
                 <exclusion>
@@ -81,7 +74,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
             <!--排除servlet-api,否则springBoot无法启动-->
             <exclusions>
                 <exclusion>
@@ -93,7 +86,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
             <!--排除servlet-api,否则springBoot无法启动-->
             <exclusions>
                 <exclusion>
@@ -105,12 +98,12 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-common</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
             <!--排除servlet-api,否则springBoot无法启动-->
             <exclusions>
                 <exclusion>
@@ -122,7 +115,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-yarn-common</artifactId>
-            <version>2.7.2</version>
+            <version>${hadoop.version}</version>
             <!--排除servlet-api,否则springBoot无法启动-->
             <exclusions>
                 <exclusion>
