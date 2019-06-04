@@ -37,9 +37,24 @@ spring:
     host: 112.74.189.171
     port: 6379
     password: 123456
-    #连接超时时间（毫秒）
-    timeout: 10000
-
+    #连接超时时间（秒）
+    timeout: PT10S
+  kafka:
+    producer:
+      bootstrap-servers: 192.168.1.102:9092,192.168.1.102:9092,192.168.1.102:9092
+      retries: 0
+      batch-size: 4096
+      buffer-memory: 40960
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: -1
+    consumer:
+      bootstrap-servers: 192.168.1.102:9092,192.168.1.102:9092,192.168.1.102:9092
+      group-id: 0
+      enable-auto-commit: false
+      auto-commit-interval: PT1S
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 #测试环境配置
 ---
@@ -54,9 +69,23 @@ spring:
       host: 112.74.189.171
       port: 6379
       password: 123456
-      #连接超时时间（毫秒）
-      timeout: 10000
-
+      #连接超时时间（秒）
+      timeout: PT10S
+  kafka:
+    producer:
+      bootstrap-servers: 192.168.1.102:9092,192.168.1.102:9092,192.168.1.102:9092
+      retries: 0
+      batch-size: 4096
+      buffer-memory: 40960
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      bootstrap-servers: 192.168.1.102:9092,192.168.1.102:9092,192.168.1.102:9092
+      group-id: 0
+      enable-auto-commit: false
+      auto-commit-interval: PT1S
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 #生产环境配置
 ---
@@ -71,9 +100,23 @@ spring:
       host: 112.74.189.171
       port: 6379
       password: 123456
-      #连接超时时间（毫秒）
-      timeout: 10000
-
+      #连接超时时间（秒）
+      timeout: PT10S
+  kafka:
+    producer:
+      bootstrap-servers: 192.168.1.102:9092,192.168.1.102:9092,192.168.1.102:9092
+      retries: 0
+      batch-size: 4096
+      buffer-memory: 40960
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      bootstrap-servers: 192.168.1.102:9092,192.168.1.102:9092,192.168.1.102:9092
+      group-id: 0
+      enable-auto-commit: false
+      auto-commit-interval: PT1S
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 
 
