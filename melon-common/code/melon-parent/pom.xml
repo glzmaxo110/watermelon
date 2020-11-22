@@ -33,6 +33,7 @@
         <module>../../../melon-bigdata/code/</module>
         <module>../../../melon-study/code/</module>
         <module>../../../melon-oss/code/</module>
+        <module>../../../melon-poxiao/code/</module>
         <module>../../../eureka-server/code/</module>
     </modules>
 
@@ -45,6 +46,7 @@
         <oss_pro_version>0.0.1-SNAPSHOT</oss_pro_version>
         <bigdata_pro_version>0.0.1-SNAPSHOT</bigdata_pro_version>
         <study_pro_version>0.0.1-SNAPSHOT</study_pro_version>
+        <poxiao_pro_version>0.0.1-SNAPSHOT</poxiao_pro_version>
         <eurekaServer_pro_version>0.0.1-SNAPSHOT</eurekaServer_pro_version>
 
         <!--其他包属性-->
@@ -77,7 +79,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RC2</version>
+                <version>Finchley.SR4</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
